@@ -8,7 +8,7 @@ ip_address = socket.gethostbyname(hostname)
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
     fileList = listdir("files")
     return render_template("index.html", files=fileList)
