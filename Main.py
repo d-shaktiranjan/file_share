@@ -1,4 +1,9 @@
 from flask import Flask
+import socket
+
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+
 app = Flask(__name__)
 
 
