@@ -20,4 +20,4 @@ def func(fName):
 
 
 if __name__ == "__main__":
-    app.run(host=ip_address)
+    app.run(host=ip_address, debug=True)
