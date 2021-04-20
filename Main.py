@@ -1,6 +1,6 @@
 from flask import Flask, render_template, send_file
 import socket
-from os import listdir, stat
+from os import listdir, stat, mkdir
 
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
@@ -24,4 +24,8 @@ def func(fName):
 
 
 if __name__ == "__main__":
+    try:
+        mkdir("files")
+    except:
+        pass
     app.run(host=ip_address, debug=True)
