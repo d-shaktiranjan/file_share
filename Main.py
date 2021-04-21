@@ -25,7 +25,7 @@ def header(response):
 
 
 @app.route("/download/<string:fName>")
-def func(fName):
+def download(fName):
     return send_file("files/"+fName, as_attachment=True)
 
 
