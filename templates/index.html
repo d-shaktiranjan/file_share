@@ -24,7 +24,7 @@
         <ul class="list-group">
             {% for f in files %}
             <li class="fileList">
-                <h3>{{f}}</h3>
+                <span class="fileName">{{f}}</span>
                 <button type="button" onclick="location.href='/download/{{f}}'" class="dbtn">
                     <i class="icon fas fa-arrow-down"></i>
                     <span class="dl-text">Download</span>
