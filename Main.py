@@ -18,6 +18,12 @@ def index():
     return render_template("index.html", files=fileList, size=sizeList)
 
 
+@app.after_request
+def header(response):
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
+
+
 @app.route("/download/<string:fName>")
 def func(fName):
     return send_file("files/"+fName, as_attachment=True)
