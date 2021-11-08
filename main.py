@@ -1,6 +1,6 @@
 from flask import Flask, render_template, send_file
 import socket
-from os import listdir, stat, mkdir
+from os import listdir, mkdir, path
 
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
@@ -13,8 +13,8 @@ def index():
     fileList = listdir("files")
     sizeList = []
     for i in fileList:
-        about = stat(f"files/{i}")
-        sizeList.append(about.st_size/1000)
+        fileSize = path.getsize(f"files/{i}")
+        sizeList.append(fileSize)
     return render_template("index.html", files=zip(fileList, sizeList))
 
 
