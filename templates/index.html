@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
     <!-- External CSS -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
 
     <title>File Share</title>
 </head>
@@ -22,9 +22,10 @@
             Your Files...
         </h1>
         <ul class="list-group">
-            {% for f in files %}
+            {% for f,s in files %}
             <li class="fileList">
                 <span class="fileName">{{f}}</span>
+                <span class="fileName">{{s}}</span>
                 <button type="button" onclick="location.href='/download/{{f}}'" class="dbtn">
                     <i class="icon fas fa-arrow-down"></i>
                     <span class="dl-text">Download</span>

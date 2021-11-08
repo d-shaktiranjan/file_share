@@ -15,7 +15,7 @@ def index():
     for i in fileList:
         about = stat(f"files/{i}")
         sizeList.append(about.st_size/1000)
-    return render_template("index.html", files=fileList, size=sizeList)
+    return render_template("index.html", files=zip(fileList, sizeList))
 
 
 @app.after_request
