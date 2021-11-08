@@ -2,9 +2,9 @@ def getSizeWithUnit(sizeInByte):
     temp = sizeInByte
     unitList = ["Byte", "KB", "MB", "GB"]
     count = 0
-    while temp > 1024:
-        count += 1
-        if temp < 1024 or count == 3:
+    while count < 3:
+        if temp < 1024:
             break
+        count += 1
         temp /= 1024
     return round(temp, 2), unitList[count]
