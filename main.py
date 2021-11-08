@@ -1,6 +1,7 @@
 from flask import Flask, render_template, send_file
 import socket
 from os import listdir, mkdir, path
+from utils import getSizeWithUnit
 
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
@@ -12,10 +13,13 @@ app = Flask(__name__)
 def index():
     fileList = listdir("files")
     sizeList = []
+    units = []
     for i in fileList:
         fileSize = path.getsize(f"files/{i}")
-        sizeList.append(fileSize)
-    return render_template("index.html", files=zip(fileList, sizeList))
+        sizeWithUnit = getSizeWithUnit(fileSize)
+        sizeList.append(sizeWithUnit[0])
+        units.append(sizeWithUnit[1])
+    return render_template("index.html", files=zip(fileList, sizeList, units))
 
 
 @app.after_request
