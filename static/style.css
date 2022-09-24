@@ -50,7 +50,11 @@ h1 {
     background-color: rgb(49, 155, 49);
 }
 
-@media screen and (max-width: 1200px){
+.delBtn:hover {
+    background-color: rgb(226, 34, 34);
+}
+
+@media screen and (max-width: 1200px) {
 
     .fileList {
         width: 80%;

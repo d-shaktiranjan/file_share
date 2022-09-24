@@ -1,3 +1,6 @@
+import os
+
+
 def getSizeWithUnit(sizeInByte):
     temp = sizeInByte
     unitList = ["Byte", "KB", "MB", "GB"]
@@ -8,3 +11,11 @@ def getSizeWithUnit(sizeInByte):
         count += 1
         temp /= 1000
     return round(temp, 2), unitList[count]
+
+
+def removeFile(fileName):
+    try:
+        os.remove("files/"+fileName)
+        return True
+    except:
+        return False

@@ -1,7 +1,7 @@
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, redirect
 import socket
 from os import listdir, mkdir, path
-from utils import getSizeWithUnit
+from utils import getSizeWithUnit, removeFile
 
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
@@ -31,6 +31,12 @@ def header(response):
 @app.route("/download/<string:fName>")
 def download(fName):
     return send_file("files/"+fName, as_attachment=True)
+
+
+@app.route("/delete/<string:fName>")
+def delete(fName):
+    removeFile(fName)
+    return redirect("/")
 
 
 if __name__ == "__main__":
