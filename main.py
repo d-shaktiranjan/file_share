@@ -3,8 +3,9 @@ import socket
 from os import listdir, mkdir, path
 from utils import getSizeWithUnit, removeFile
 
-hostname = socket.gethostname()
-ip_address = socket.gethostbyname(hostname)
+socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+ip_address = socket.getsockname()[0]
+socket.close()
 
 app = Flask(__name__)
 
