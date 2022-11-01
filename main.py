@@ -1,7 +1,7 @@
 from flask import Flask, render_template, send_file, redirect
 import socket
 from os import listdir, mkdir, path
-from utils import getSizeWithUnit, removeFile
+from utils import *
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 ip_address = socket.getsockname()[0]
@@ -20,7 +20,7 @@ def index():
         sizeWithUnit = getSizeWithUnit(fileSize)
         sizeList.append(sizeWithUnit[0])
         units.append(sizeWithUnit[1])
-    return render_template("index.html", files=zip(fileList, sizeList, units))
+    return render_template("index.html", files=zip(fileList, sizeList, units), isHostDevice=isHostDevice())
 
 
 @app.after_request

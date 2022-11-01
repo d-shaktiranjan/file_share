@@ -1,4 +1,5 @@
 import os
+from flask import request
 
 
 def getSizeWithUnit(sizeInByte):
@@ -19,3 +20,8 @@ def removeFile(fileName):
         return True
     except:
         return False
+
+
+def isHostDevice():
+    ipAddress = request.remote_addr
+    return not ipAddress == "127.0.0.1"
