@@ -24,4 +24,4 @@ def removeFile(fileName):
 
 def isHostDevice():
     ipAddress = request.remote_addr
-    return not ipAddress == "127.0.0.1"
+    return ipAddress == "127.0.0.1"
