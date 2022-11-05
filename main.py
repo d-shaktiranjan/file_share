@@ -1,11 +1,6 @@
 from flask import Flask, render_template, send_file, redirect
-import socket
 from os import listdir, mkdir, path
 from utils import *
-
-socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-ip_address = socket.getsockname()[0]
-socket.close()
 
 app = Flask(__name__)
 
@@ -45,4 +40,4 @@ if __name__ == "__main__":
         mkdir("files")
     except:
         pass
-    app.run(host=ip_address, debug=True)
+    app.run(host=getIpAddress(), debug=True)
