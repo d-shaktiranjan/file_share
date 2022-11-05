@@ -1,78 +1,60 @@
 :root {
-    font-family: 'Source Sans Pro', sans-serif;
+    --border-color: rgb(219, 211, 211);
+    --download-btn-color: rgb(181, 249, 205);
 }
 
-h1 {
-    text-align: center;
+h2 {
+    margin: 3rem 1rem;
+    font-family: 'Poppins', sans-serif;
 }
+
 
 .list-group {
     list-style: none;
-    margin-top: 3rem;
     padding: 0;
-    display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .fileList {
-    display: flex;
+    border-bottom: 1px solid var(--border-color);
     justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgb(219, 211, 211);
     padding: 1rem;
-    margin: 1rem;
-    border-radius: 1rem;
-    width: 70%;
+    width: 100%;
+}
+
+.list-group, .fileList {
+    display: flex;
+    align-items: center;
+}
+
+.fileList:first-child {
+    border-top: 1px solid var(--border-color);
 }
 
 .fileName {
     font-size: 1.25rem;
-    font-weight: bold;
+    font-weight: 475;
+    flex: 0.25;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.badge {
+    width: 4rem;
+    font: inherit;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
 }
 
 .dbtn {
-    font: inherit;
     border: none;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: 200ms;
-    background-color: rgb(78, 75, 75);
-    color: white;
-}
-
-.icon {
-    margin-right: 5px;
+    border-radius: 50rem;
+    width: 3rem;
+    padding: 0.25rem;
+    line-height: 1;
 }
 
 .dbtn:hover {
-    background-color: rgb(49, 155, 49);
-}
-
-.delBtn:hover {
-    background-color: rgb(226, 34, 34);
-}
-
-@media screen and (max-width: 1200px) {
-
-    .fileList {
-        width: 80%;
-    }
-
-    .fileName {
-        font-size: 1rem;
-    }
-
-    .dl-text {
-        display: none;
-    }
-
-    .icon {
-        margin: 0;
-    }
-
-    .dbtn {
-        border-radius: 3rem;
-    }
+    background-color: var(--download-btn-color);
 }
