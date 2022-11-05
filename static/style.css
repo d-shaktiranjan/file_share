@@ -1,6 +1,7 @@
 :root {
     --border-color: rgb(219, 211, 211);
     --download-btn-color: rgb(181, 249, 205);
+    --delete-btn-color: rgb(238, 124, 124);
 }
 
 h2 {
@@ -8,6 +9,10 @@ h2 {
     font-family: 'Poppins', sans-serif;
 }
 
+.list-group, .fileList {
+    display: flex;
+    align-items: center;
+}
 
 .list-group {
     list-style: none;
@@ -22,10 +27,6 @@ h2 {
     width: 100%;
 }
 
-.list-group, .fileList {
-    display: flex;
-    align-items: center;
-}
 
 .fileList:first-child {
     border-top: 1px solid var(--border-color);
@@ -58,3 +59,19 @@ h2 {
 .dbtn:hover {
     background-color: var(--download-btn-color);
 }
+
+.delBtn:hover {
+    background-color: var(--delete-btn-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .fileName {
+        font-size: 1em;
+        flex: 2;
+    }
+
+    .badge {
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+  }

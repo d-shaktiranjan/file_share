@@ -32,18 +32,20 @@
             <li class="fileList">
                 <span class="fileName">{{f}}</span>
                 <span class="badge rounded-pill bg-primary">{{s}} {{u}}</span>
-                <button type="button" onclick="location.href='/download/{{f}}'" class="dbtn">
-                    <span class="material-icons-outlined">
-                        file_download
-                    </span>
-                </button>
-                {% if isHostDevice %}
-                <button type="button" onclick="location.href='/delete/{{f}}'" class="dbtn delBtn">
-                    <span class="material-icons-outlined">
-                        delete
-                    </span>
-                </button>
-                {% endif %}
+                <div class="btnsWrapper">
+                    <button type="button" onclick="location.href='/download/{{f}}'" class="dbtn">
+                        <span class="material-icons-outlined">
+                            file_download
+                        </span>
+                    </button>
+                    {% if isHostDevice %}
+                    <button type="button" onclick="location.href='/delete/{{f}}'" class="dbtn delBtn">
+                        <span class="material-icons-outlined">
+                            delete
+                        </span>
+                    </button>
+                    {% endif %}
+                </div>   
             </li>
             {% endfor %}
         </ul>
