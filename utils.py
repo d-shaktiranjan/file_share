@@ -6,7 +6,7 @@ from platform import system
 
 def getSizeWithUnit(sizeInByte):
     temp = sizeInByte
-    unitList = ["Byte", "KB", "MB", "GB"]
+    unitList = ["Bytes", "KB", "MB", "GB"]
     count = 0
     while count < 3:
         if temp < 1000:

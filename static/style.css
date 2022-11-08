@@ -1,26 +1,40 @@
 :root {
     --border-color: rgb(219, 211, 211);
+    --list-hover-color: rgb(224, 224, 224);
     --download-btn-color: rgb(181, 249, 205);
     --delete-btn-color: rgb(238, 124, 124);
 }
 
-h2 {
-    margin: 3rem 1rem;
-    font-family: 'Poppins', sans-serif;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }
 
-.list-group, .fileList {
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 80vw;
+    margin: auto;
+}
+
+h2 {
+    margin: 3rem 0;
+}
+
+ul, li {
     display: flex;
     align-items: center;
 }
 
-.list-group {
+ul {
     list-style: none;
     padding: 0;
     flex-direction: column;
 }
 
-.fileList {
+li {
     border-bottom: 1px solid var(--border-color);
     justify-content: space-between;
     padding: 1rem;
@@ -28,50 +42,57 @@ h2 {
 }
 
 
-.fileList:first-child {
+li:first-child {
     border-top: 1px solid var(--border-color);
 }
 
+li:hover {
+    background-color: var(--list-hover-color);
+}
+
 .fileName {
-    font-size: 1.25rem;
-    font-weight: 475;
-    flex: 0.25;
+    font-weight: 500;
+    width: 50vw;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.badge {
-    width: 4rem;
-    font: inherit;
-    font-size: 0.75rem;
-    padding: 0.5rem 0.75rem;
+.fileSize {
+    min-width: 5em;
+    font-weight: 300;
 }
 
-.dbtn {
+button {
+    cursor: pointer;
     border: none;
     border-radius: 50rem;
     width: 3rem;
     padding: 0.25rem;
-    line-height: 1;
 }
 
-.dbtn:hover {
+button:hover {
     background-color: var(--download-btn-color);
 }
 
-.delBtn:hover {
+.deleteBtn:hover {
     background-color: var(--delete-btn-color);
 }
 
+.kebabMenu {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
-    .fileName {
-        font-size: 1em;
-        flex: 2;
+    .fileName, .fileSize {
+        font-size: 0.8em;
+    }
+    
+    .interactButtons {
+        display: none;
     }
 
-    .badge {
-        margin-left: 5px;
-        margin-right: 10px;
+    .kebabMenu {
+        display: block;
     }
   }
