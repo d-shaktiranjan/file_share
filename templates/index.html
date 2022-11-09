@@ -17,11 +17,11 @@
     <ul>
         {% for f,s,u in files %}
         <li>
-            <span class="fileName">{{f}}</span>
-            <span class="fileSize">{{s}} {{u}}</span>
-            <span class="interactButtons">
+            <span class="file-name">{{f}}</span>
+            <span class="file-size">{{s}} {{u}}</span>
+            <span class="interact-buttons">
                 {% if isHostDevice %}
-                <button type="button" onclick="location.href='/delete/{{f}}'" class="deleteBtn">
+                <button type="button" onclick="location.href='/delete/{{f}}'" class="delete-button">
                     <span class="material-symbols-outlined">delete</span>
                 </button>
                 {% endif %}
@@ -29,7 +29,7 @@
                     <span class="material-symbols-outlined">file_download</span>
                 </button>
             </span>
-            <span class="material-symbols-outlined kebabMenu">more_vert</span>
+            <span class="material-symbols-outlined kebab-menu">more_vert</span>
         </li>
         {% endfor %}
     </ul>
