@@ -26,7 +26,10 @@ def header(response):
 
 @app.route("/download/<string:fName>")
 def download(fName):
-    return send_file("files/"+fName, as_attachment=True)
+    try:
+        return send_file("files/"+fName, as_attachment=True)
+    except:
+        return redirect("/")
 
 
 @app.route("/delete/<string:fName>")
